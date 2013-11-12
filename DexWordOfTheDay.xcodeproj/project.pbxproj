@@ -17,7 +17,12 @@
 		4E45519217D65E1400924CD3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E45519117D65E1400924CD3 /* Default.png */; };
 		4E45519417D65E1400924CD3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E45519317D65E1400924CD3 /* Default@2x.png */; };
 		4E45519617D65E1400924CD3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E45519517D65E1400924CD3 /* Default-568h@2x.png */; };
-		4E45519917D65E1400924CD3 /* DexWordOfTheDay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E45519717D65E1400924CD3 /* DexWordOfTheDay.xcdatamodeld */; };
+		4E9A076517D6647D009DE58B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E9A076317D6647D009DE58B /* Model.xcdatamodeld */; };
+		4E9A076B17D666E0009DE58B /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9A076A17D666E0009DE58B /* Word.m */; };
+		4E9A077117D66783009DE58B /* Word+Dex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9A077017D66783009DE58B /* Word+Dex.m */; };
+		4E9A077417D6684D009DE58B /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9A077317D6684D009DE58B /* CoreDataTableViewController.m */; };
+		4E9A077617D66923009DE58B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9A077517D66923009DE58B /* MainStoryboard.storyboard */; };
+		4E9A077917D67D17009DE58B /* WordsCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9A077817D67D17009DE58B /* WordsCDTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +40,16 @@
 		4E45519117D65E1400924CD3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		4E45519317D65E1400924CD3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4E45519517D65E1400924CD3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		4E45519817D65E1400924CD3 /* DexWordOfTheDay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DexWordOfTheDay.xcdatamodel; sourceTree = "<group>"; };
+		4E9A076417D6647D009DE58B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		4E9A076917D666E0009DE58B /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Word.h; path = CoreData/Word.h; sourceTree = "<group>"; };
+		4E9A076A17D666E0009DE58B /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Word.m; path = CoreData/Word.m; sourceTree = "<group>"; };
+		4E9A076F17D66783009DE58B /* Word+Dex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Word+Dex.h"; path = "CoreData/Word+Dex.h"; sourceTree = "<group>"; };
+		4E9A077017D66783009DE58B /* Word+Dex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Word+Dex.m"; path = "CoreData/Word+Dex.m"; sourceTree = "<group>"; };
+		4E9A077217D6684D009DE58B /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		4E9A077317D6684D009DE58B /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		4E9A077517D66923009DE58B /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		4E9A077717D67D17009DE58B /* WordsCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsCDTVC.h; sourceTree = "<group>"; };
+		4E9A077817D67D17009DE58B /* WordsCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsCDTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,10 +98,15 @@
 		4E45518517D65E1400924CD3 /* DexWordOfTheDay */ = {
 			isa = PBXGroup;
 			children = (
+				4E9A077217D6684D009DE58B /* CoreDataTableViewController.h */,
+				4E9A077317D6684D009DE58B /* CoreDataTableViewController.m */,
+				4E45519F17D663CC00924CD3 /* CoreData */,
 				4E45518E17D65E1400924CD3 /* AppDelegate.h */,
 				4E45518F17D65E1400924CD3 /* AppDelegate.m */,
-				4E45519717D65E1400924CD3 /* DexWordOfTheDay.xcdatamodeld */,
 				4E45518617D65E1400924CD3 /* Supporting Files */,
+				4E9A077517D66923009DE58B /* MainStoryboard.storyboard */,
+				4E9A077717D67D17009DE58B /* WordsCDTVC.h */,
+				4E9A077817D67D17009DE58B /* WordsCDTVC.m */,
 			);
 			path = DexWordOfTheDay;
 			sourceTree = "<group>";
@@ -104,6 +123,18 @@
 				4E45519517D65E1400924CD3 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4E45519F17D663CC00924CD3 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				4E9A076317D6647D009DE58B /* Model.xcdatamodeld */,
+				4E9A076917D666E0009DE58B /* Word.h */,
+				4E9A076A17D666E0009DE58B /* Word.m */,
+				4E9A076F17D66783009DE58B /* Word+Dex.h */,
+				4E9A077017D66783009DE58B /* Word+Dex.m */,
+			);
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +192,7 @@
 				4E45519217D65E1400924CD3 /* Default.png in Resources */,
 				4E45519417D65E1400924CD3 /* Default@2x.png in Resources */,
 				4E45519617D65E1400924CD3 /* Default-568h@2x.png in Resources */,
+				4E9A077617D66923009DE58B /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +205,11 @@
 			files = (
 				4E45518C17D65E1400924CD3 /* main.m in Sources */,
 				4E45519017D65E1400924CD3 /* AppDelegate.m in Sources */,
-				4E45519917D65E1400924CD3 /* DexWordOfTheDay.xcdatamodeld in Sources */,
+				4E9A076517D6647D009DE58B /* Model.xcdatamodeld in Sources */,
+				4E9A076B17D666E0009DE58B /* Word.m in Sources */,
+				4E9A077117D66783009DE58B /* Word+Dex.m in Sources */,
+				4E9A077417D6684D009DE58B /* CoreDataTableViewController.m in Sources */,
+				4E9A077917D67D17009DE58B /* WordsCDTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,17 +326,19 @@
 				4E45519E17D65E1400924CD3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		4E45519717D65E1400924CD3 /* DexWordOfTheDay.xcdatamodeld */ = {
+		4E9A076317D6647D009DE58B /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				4E45519817D65E1400924CD3 /* DexWordOfTheDay.xcdatamodel */,
+				4E9A076417D6647D009DE58B /* Model.xcdatamodel */,
 			);
-			currentVersion = 4E45519817D65E1400924CD3 /* DexWordOfTheDay.xcdatamodel */;
-			path = DexWordOfTheDay.xcdatamodeld;
+			currentVersion = 4E9A076417D6647D009DE58B /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = CoreData/Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
