@@ -7,6 +7,7 @@
 //
 
 #import "WordsCDTVC.h"
+#import "RssParser.h"
 
 @interface WordsCDTVC ()
 
@@ -72,8 +73,16 @@
                                 NSError *error = nil;
                                 NSURL *rssUrl = [[NSURL alloc] initWithString:@"http://dexonline.ro/rss/cuvantul-zilei"];
                                 NSString *content = [[NSString alloc] initWithContentsOfURL:rssUrl encoding:NSUTF8StringEncoding error:&error];
-                                
         
+                                if (error == nil)
+                                {
+                                   RssParser* parser = [[RssParser alloc] init];
+                                   NSArray* words = [parser parseContent:content];
+                                }
+                                else
+                                {
+                                    
+                                }
                             });
 }
 

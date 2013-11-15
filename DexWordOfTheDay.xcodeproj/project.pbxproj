@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E3468961832C5BA00FD565A /* RssParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3468951832C5BA00FD565A /* RssParser.m */; };
+		4E3468DA1836A95B00FD565A /* RssWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3468D91836A95B00FD565A /* RssWord.m */; };
 		4E45517E17D65E1400924CD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E45517D17D65E1400924CD3 /* UIKit.framework */; };
 		4E45518017D65E1400924CD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E45517F17D65E1400924CD3 /* Foundation.framework */; };
 		4E45518217D65E1400924CD3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E45518117D65E1400924CD3 /* CoreGraphics.framework */; };
@@ -26,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E3468941832C5BA00FD565A /* RssParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RssParser.h; sourceTree = "<group>"; };
+		4E3468951832C5BA00FD565A /* RssParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RssParser.m; sourceTree = "<group>"; };
+		4E3468D81836A95B00FD565A /* RssWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RssWord.h; sourceTree = "<group>"; };
+		4E3468D91836A95B00FD565A /* RssWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RssWord.m; sourceTree = "<group>"; };
 		4E45517A17D65E1400924CD3 /* DexWordOfTheDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DexWordOfTheDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E45517D17D65E1400924CD3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4E45517F17D65E1400924CD3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -107,6 +113,10 @@
 				4E9A077517D66923009DE58B /* MainStoryboard.storyboard */,
 				4E9A077717D67D17009DE58B /* WordsCDTVC.h */,
 				4E9A077817D67D17009DE58B /* WordsCDTVC.m */,
+				4E3468941832C5BA00FD565A /* RssParser.h */,
+				4E3468951832C5BA00FD565A /* RssParser.m */,
+				4E3468D81836A95B00FD565A /* RssWord.h */,
+				4E3468D91836A95B00FD565A /* RssWord.m */,
 			);
 			path = DexWordOfTheDay;
 			sourceTree = "<group>";
@@ -204,8 +214,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E45518C17D65E1400924CD3 /* main.m in Sources */,
+				4E3468DA1836A95B00FD565A /* RssWord.m in Sources */,
 				4E45519017D65E1400924CD3 /* AppDelegate.m in Sources */,
 				4E9A076517D6647D009DE58B /* Model.xcdatamodeld in Sources */,
+				4E3468961832C5BA00FD565A /* RssParser.m in Sources */,
 				4E9A076B17D666E0009DE58B /* Word.m in Sources */,
 				4E9A077117D66783009DE58B /* Word+Dex.m in Sources */,
 				4E9A077417D6684D009DE58B /* CoreDataTableViewController.m in Sources */,
@@ -288,9 +300,11 @@
 		4E45519D17D65E1400924CD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DexWordOfTheDay/DexWordOfTheDay-Prefix.pch";
 				INFOPLIST_FILE = "DexWordOfTheDay/DexWordOfTheDay-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -299,9 +313,11 @@
 		4E45519E17D65E1400924CD3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DexWordOfTheDay/DexWordOfTheDay-Prefix.pch";
 				INFOPLIST_FILE = "DexWordOfTheDay/DexWordOfTheDay-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
