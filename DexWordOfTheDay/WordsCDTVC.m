@@ -8,6 +8,8 @@
 
 #import "WordsCDTVC.h"
 #import "RssParser.h"
+#import "Word.h"
+#import "Word+Dex.h"
 
 @interface WordsCDTVC ()
 
@@ -42,7 +44,7 @@
     {
         [document saveToURL:url
            forSaveOperation:UIDocumentSaveForCreating
-          completionHandler:^(BOOL success) {
+          completionHandler:^(BOOL success){
               if (success == YES)
               {
                   self.managedObjectContext = document.managedObjectContext;
@@ -77,7 +79,8 @@
                                 if (error == nil)
                                 {
                                    RssParser* parser = [[RssParser alloc] init];
-                                   NSArray* words = [parser parseContent:content];
+                                   NSArray* rssWords = [parser parseContent:content];
+                                   [self saveRssWordsInDatabase:rssWords];
                                 }
                                 else
                                 {
@@ -85,6 +88,24 @@
                                 }
                             });
 }
+
+- (void)saveRssWordsInDatabase:(NSArray *)rssWords
+{
+    [self.managedObjectContext performBlock:
+        ^{
+            for (RssWord *rssWord in rssWords)
+            {
+                [Word fromRssWord:rssWord inManagedObjectContext:self.managedObjectContext];
+            }
+            dispatch_async(dispatch_get_main_queue(),
+                      ^{
+                          [self.refreshControl endRefreshing];
+                       });
+         }
+    ];
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {

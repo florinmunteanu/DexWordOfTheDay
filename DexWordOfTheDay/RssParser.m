@@ -5,7 +5,7 @@
 //  Created by Florin Munteanu on 12/11/13.
 //  Copyright (c) 2013 Florin Munteanu. All rights reserved.
 //
-
+#import <Foundation/NSValue.h>
 #import "RssParser.h"
 #import "RssWord.h"
 
@@ -89,8 +89,9 @@
     if ([elementName isEqualToString:@"item"])
     {
         currentWord.title = [NSString stringWithString:title];
-        currentWord.definition = definition;
+        currentWord.definition = [self clearHtmlTags:definition];
         currentWord.link = link;
+        currentWord.imageURL = [self getImageURL:definition];
         
         currentWord.day = [dateFormatter dateFromString:day];
         
@@ -99,23 +100,129 @@
             currentWord.day = [NSDate date];
         }
         
-        [self.words addObject:[currentWord copy]];
+        [self.words addObject:currentWord];
     }
 }
 
--(NSString*)getPictureLink:(NSString *)definition
+-(NSString *)getImageURL:(NSString *)wordDefinition
 {
-    NSRange r1 = [definition rangeOfString:@"src=\""];
-    NSRange r2 = [definition rangeOfString:@".jpg\""];
+    NSRange src = [wordDefinition rangeOfString:@"src=\""];
+    NSRange ext = [wordDefinition rangeOfString:@".jpg\""];
     
-    if (r1.location == NSNotFound || r2.location == NSNotFound)
+    if (src.length == 0)
     {
         return @"";
     }
+    else if (ext.length == 0)
+    {
+        ext = [wordDefinition rangeOfString:@".jpeg\""];
+        
+        if (ext.length == 0)
+        {
+            return @"";
+        }
+    }
+    
+    return [wordDefinition substringWithRange:NSMakeRange(src.location + src.length, ext.location + ext.length - src.location - src.length - 1)];
+}
+
+-(NSString *)getShortDefinition:(NSString *)wordDefinition
+{
+    NSRange prefix = [wordDefinition rangeOfString:@"<b>1.</b>"];
+    
+    if (prefix.length > 0)
+    {
+        NSUInteger start = prefix.location + prefix.length;
+        
+        /* Search the first occurence of '<' character after "<b>1.</b>".
+         */
+        NSRange end = [wordDefinition rangeOfString:@"<" options:NSLiteralSearch range:NSMakeRange(start, wordDefinition.length - prefix.location + prefix.length)];
+        if (end.length > 0)
+        {
+            NSUInteger length = end.location - prefix.location - prefix.length;
+            
+            return [wordDefinition substringWithRange:NSMakeRange(start, length)];
+        }
+    }
+    /*
     else
     {
-        return [definition substringWithRange:NSMakeRange(r1.location + r1.length, r2.location + r2.location)];
+        [wordDefinition rangeOfString:@"<img"];
+        
+        NSString* definition = [wordDefinition stringByReplacingOccurrencesOfString:@"<br/>" withString:@""];
+        definition = [wordDefinition stringByReplacingOccurrencesOfString:@"<i>" withString:@""];
+    }*/
+    return nil;
+}
+
+-(NSArray *)getHtmlTags:(NSString *)wordDefinition
+{
+    NSMutableArray* tags = [[NSMutableArray alloc] initWithCapacity:12];
+    
+    NSUInteger startTagPosition = 0;
+    NSUInteger endTagPosition = 0;
+    BOOL startTagFound = FALSE;
+    BOOL endTagFound = FALSE;
+    
+    // http://cocoadevcentral.com/articles/000082.php
+    NSRange range = {0, [wordDefinition length]};
+    
+    unichar buffer[range.length];
+    
+    [wordDefinition getCharacters:buffer range:range];
+    
+    for (unsigned i = 0; i < range.length; i++)
+    {
+        unichar c = buffer[i];
+        switch (c)
+        {
+            case '<':
+            {
+                if (startTagFound == FALSE)
+                {
+                    startTagPosition = i;
+                    startTagFound = TRUE;
+                }
+                break;
+            }
+            case '/':
+            {
+                endTagFound = TRUE;
+                break;
+            }
+            case '>':
+            {
+                if (endTagFound == TRUE)
+                {
+                    endTagPosition = i;
+                    // reset tags
+                    endTagFound = FALSE;
+                    startTagFound = FALSE;
+                    
+                    NSRange tag = NSMakeRange(startTagPosition, endTagPosition - startTagPosition + 1);
+                    [tags addObject:[NSValue valueWithRange:tag]];
+                }
+                break;
+            }
+            default:
+                break;
+        }
     }
+    
+    return tags;
+}
+
+-(NSString *)clearHtmlTags:(NSString *)wordDefinition
+{
+    NSArray* tags = [self getHtmlTags:wordDefinition];
+    for (NSValue * tag in tags)
+    {
+        NSRange range = [tag rangeValue];
+        NSString * replacement = [@"" stringByPaddingToLength:range.length withString:@" " startingAtIndex:0];
+        wordDefinition = [wordDefinition stringByReplacingCharactersInRange:range withString:replacement];
+    }
+    
+    return wordDefinition;
 }
 
 @end
