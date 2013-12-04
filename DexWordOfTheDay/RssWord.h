@@ -10,11 +10,11 @@
 
 @interface RssWord : NSObject
 
-@property (nonatomic, weak) NSDate * day;
-@property (nonatomic, weak) NSString * title;
-@property (nonatomic, weak) NSString * definition;
-@property (nonatomic, weak) NSData * image;
-@property (nonatomic, weak) NSString * imageURL;
-@property (nonatomic, weak) NSString * link;
+@property (nonatomic, strong) NSDate * day;
+@property (nonatomic, strong) NSString * title;
+@property (nonatomic, strong) NSString * definition;
+@property (nonatomic, strong) NSData * image;
+@property (nonatomic, strong) NSString * imageURL;
+@property (nonatomic, strong) NSString * link;
 
 @end

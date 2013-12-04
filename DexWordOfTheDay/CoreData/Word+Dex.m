@@ -18,7 +18,7 @@
     
     NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:@"Word"];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES]];
-    request.predicate = [NSPredicate predicateWithFormat:@"unique = %@", rssWord.title];
+    request.predicate = [NSPredicate predicateWithFormat:@"title = %@", rssWord.title];
     
     NSError* error = nil;
     NSArray* matches = [context executeFetchRequest:request error:&error];

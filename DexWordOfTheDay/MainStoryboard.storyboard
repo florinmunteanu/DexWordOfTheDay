@@ -37,6 +37,10 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8SX-hS-Dje" id="adF-Z6-Y6y"/>
+                            <outlet property="delegate" destination="8SX-hS-Dje" id="wVX-en-7ni"/>
+                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Words" id="VeF-p4-i9m"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="f0g-sC-KOd">

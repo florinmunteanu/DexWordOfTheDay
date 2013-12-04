@@ -90,7 +90,7 @@
     {
         currentWord.title = [NSString stringWithString:title];
         currentWord.definition = [self clearHtmlTags:definition];
-        currentWord.link = link;
+        currentWord.link = [NSString stringWithString:link];
         currentWord.imageURL = [self getImageURL:definition];
         
         currentWord.day = [dateFormatter dateFromString:day];

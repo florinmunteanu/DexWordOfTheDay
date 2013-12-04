@@ -80,7 +80,7 @@
                                 {
                                    RssParser* parser = [[RssParser alloc] init];
                                    NSArray* rssWords = [parser parseContent:content];
-                                   [self saveRssWordsInDatabase:rssWords];
+                                   [self saveRssWordsInDatabase:[rssWords copy]];
                                 }
                                 else
                                 {
@@ -105,7 +105,33 @@
     ];
 }
 
+- (void)setManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
+{
+    _managedObjectContext = managedObjectContext;
+    if (managedObjectContext)
+    {
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Word"];
+        request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"day" ascending:NO]];
+        request.predicate = nil; // all words
+        
+        self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+    }
+    else
+    {
+        self.fetchedResultsController = nil;
+    }
+}
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Word"];
+    
+    Word *word = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = word.title;
+    //cell.detailTextLabel.text = [NSString stringWithFormat:@"%d photos", [word.photos count]];
+    
+    return cell;
+}
 
 - (void)didReceiveMemoryWarning
 {
