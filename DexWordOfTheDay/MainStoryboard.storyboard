@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="d6n-Vb-unG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="gdB-Or-mgJ">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
+        <deployment version="1792" defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
@@ -49,12 +49,13 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6y2-RH-VKh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1126" y="-520"/>
+            <point key="canvasLocation" x="-165" y="-440"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - Cuvinte-->
         <scene sceneID="9ue-un-kdb">
             <objects>
                 <navigationController id="d6n-Vb-unG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Cuvinte" image="bookmark.png" id="Rdd-bb-ajx"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ce1-HW-V9a">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -67,9 +68,72 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ITE-iN-vf6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="600" y="-520"/>
+            <point key="canvasLocation" x="-653" y="-428"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="LCE-2q-L1M">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="gdB-Or-mgJ" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="4na-ik-c61">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="d6n-Vb-unG" kind="relationship" relationship="viewControllers" id="sQi-r8-6Q3"/>
+                        <segue destination="3Q2-8X-jbC" kind="relationship" relationship="viewControllers" id="JiC-QX-Vg9"/>
+                        <segue destination="jch-XL-EGS" kind="relationship" relationship="viewControllers" id="0Ex-jl-Spa"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dpX-OM-eq7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1431" y="11"/>
+        </scene>
+        <!--View Controller - Setari-->
+        <scene sceneID="geI-RW-mIb">
+            <objects>
+                <viewController id="3Q2-8X-jbC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rf3-lT-qY3"/>
+                        <viewControllerLayoutGuide type="bottom" id="IwV-p7-yeE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="64R-vs-Yev">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Setari" image="settings.png" id="TNy-Dx-UOW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D0r-67-0TF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-653" y="451"/>
+        </scene>
+        <!--View Controller - Despre-->
+        <scene sceneID="2JA-mO-N3X">
+            <objects>
+                <viewController id="jch-XL-EGS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vR8-3Q-rfR"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gbx-BW-Fla"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7so-qf-7X4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Despre" image="info.png" id="z2k-hI-QTR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r1J-JH-B2k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-653" y="1243"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bookmark.png" width="25" height="25"/>
+        <image name="info.png" width="25" height="25"/>
+        <image name="settings.png" width="25" height="25"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -38,7 +38,7 @@
         return self.words;
     }
     dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"EEE, d MM yyyy HH:mm:ss"];
+    [dateFormatter setDateFormat:@"EEE, dd MM yyyy HH:mm:ss"];
     
     parser = [[NSXMLParser alloc] initWithData:[content dataUsingEncoding:NSUTF8StringEncoding]];
     
@@ -93,8 +93,12 @@
         currentWord.link = [NSString stringWithString:link];
         currentWord.imageURL = [self getImageURL:definition];
         
-        currentWord.day = [dateFormatter dateFromString:day];
+        NSString* trimmedDay = [day stringByReplacingOccurrencesOfString:@"EEST" withString:@""];
+        trimmedDay = [trimmedDay stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
         
+        day = [NSMutableString stringWithString:trimmedDay];
+        
+        currentWord.day = [dateFormatter dateFromString:day];
         if (currentWord.day == nil)
         {
             currentWord.day = [NSDate date];

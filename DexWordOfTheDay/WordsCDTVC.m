@@ -80,7 +80,7 @@
                                 {
                                    RssParser* parser = [[RssParser alloc] init];
                                    NSArray* rssWords = [parser parseContent:content];
-                                   [self saveRssWordsInDatabase:[rssWords copy]];
+                                   [self saveRssWordsInDatabase:rssWords];
                                 }
                                 else
                                 {
@@ -124,11 +124,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Word"];
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"Word"];
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    //[dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
+    [dateFormatter setDateFormat:@"dd-MM"];
     
     Word *word = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = word.title;
-    //cell.detailTextLabel.text = [NSString stringWithFormat:@"%d photos", [word.photos count]];
+    cell.detailTextLabel.text = [dateFormatter stringFromDate:word.day];
     
     return cell;
 }
