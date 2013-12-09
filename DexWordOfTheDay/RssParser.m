@@ -95,6 +95,7 @@
         
         NSString* trimmedDay = [day stringByReplacingOccurrencesOfString:@"EEST" withString:@""];
         trimmedDay = [trimmedDay stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        trimmedDay = [trimmedDay stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
         
         day = [NSMutableString stringWithString:trimmedDay];
         

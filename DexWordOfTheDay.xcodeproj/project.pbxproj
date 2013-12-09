@@ -25,6 +25,8 @@
 		4E45519217D65E1400924CD3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E45519117D65E1400924CD3 /* Default.png */; };
 		4E45519417D65E1400924CD3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E45519317D65E1400924CD3 /* Default@2x.png */; };
 		4E45519617D65E1400924CD3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E45519517D65E1400924CD3 /* Default-568h@2x.png */; };
+		4E841F271853CACB000A55F4 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E841F261853CACB000A55F4 /* AboutViewController.m */; };
+		4E841F2A1853CC13000A55F4 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E841F291853CC13000A55F4 /* SettingsViewController.m */; };
 		4E9A076517D6647D009DE58B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E9A076317D6647D009DE58B /* Model.xcdatamodeld */; };
 		4E9A076B17D666E0009DE58B /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9A076A17D666E0009DE58B /* Word.m */; };
 		4E9A077117D66783009DE58B /* Word+Dex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9A077017D66783009DE58B /* Word+Dex.m */; };
@@ -58,6 +60,10 @@
 		4E45519117D65E1400924CD3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		4E45519317D65E1400924CD3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4E45519517D65E1400924CD3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4E841F251853CACB000A55F4 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		4E841F261853CACB000A55F4 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		4E841F281853CC13000A55F4 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		4E841F291853CC13000A55F4 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		4E9A076417D6647D009DE58B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		4E9A076917D666E0009DE58B /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Word.h; path = CoreData/Word.h; sourceTree = "<group>"; };
 		4E9A076A17D666E0009DE58B /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Word.m; path = CoreData/Word.m; sourceTree = "<group>"; };
@@ -143,6 +149,10 @@
 				4E3468951832C5BA00FD565A /* RssParser.m */,
 				4E3468D81836A95B00FD565A /* RssWord.h */,
 				4E3468D91836A95B00FD565A /* RssWord.m */,
+				4E841F251853CACB000A55F4 /* AboutViewController.h */,
+				4E841F261853CACB000A55F4 /* AboutViewController.m */,
+				4E841F281853CC13000A55F4 /* SettingsViewController.h */,
+				4E841F291853CC13000A55F4 /* SettingsViewController.m */,
 			);
 			path = DexWordOfTheDay;
 			sourceTree = "<group>";
@@ -251,7 +261,9 @@
 				4E9A076517D6647D009DE58B /* Model.xcdatamodeld in Sources */,
 				4E3468961832C5BA00FD565A /* RssParser.m in Sources */,
 				4E9A076B17D666E0009DE58B /* Word.m in Sources */,
+				4E841F271853CACB000A55F4 /* AboutViewController.m in Sources */,
 				4E9A077117D66783009DE58B /* Word+Dex.m in Sources */,
+				4E841F2A1853CC13000A55F4 /* SettingsViewController.m in Sources */,
 				4E9A077417D6684D009DE58B /* CoreDataTableViewController.m in Sources */,
 				4E9A077917D67D17009DE58B /* WordsCDTVC.m in Sources */,
 			);
