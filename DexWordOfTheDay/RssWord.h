@@ -16,5 +16,6 @@
 @property (nonatomic, strong) NSData * image;
 @property (nonatomic, strong) NSString * imageURL;
 @property (nonatomic, strong) NSString * link;
+@property (nonatomic, strong) NSString * htmlDefinition;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "SettingsViewController.h"
+#import "WordsCDTVC.h"
 
 @interface SettingsViewController ()
 
@@ -40,17 +41,50 @@
 {
     [super viewWillAppear:animated];
     
+    if (self.managedObjectContext == nil)
+    {
+        NSArray* vc = self.tabBarController.viewControllers;
+        if ([vc[0] isKindOfClass:[UINavigationController class]])
+        {
+            UINavigationController* nc = (UINavigationController *)vc[0];
+            WordsCDTVC* w = (WordsCDTVC *)[nc viewControllers][0];
+        
+            self.managedObjectContext = w.managedObjectContext;
+        }
+    }
+    
     BOOL isOn = [[NSUserDefaults standardUserDefaults] boolForKey:AUTO_SYNC];
     [self.autoSyncSwitch setOn:isOn];
 }
 
 - (IBAction)changeAutoSync:(id)sender
 {
-    //[[NSUserDefaults standardUserDefaults] boolForKey:AUTO_SYNC];
     NSNumber* isOn =[NSNumber numberWithBool:self.autoSyncSwitch.on];
     
     [[NSUserDefaults standardUserDefaults] setObject:isOn forKey:AUTO_SYNC];
     [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (IBAction)deleteAllWords:(id)sender
+{
+    NSFetchRequest* request = [NSFetchRequest fetchRequestWithEntityName:@"Word"];
+    //request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"day" ascending:NO]];
+    request.predicate = nil; // all words
+    
+    NSError* errors;
+    NSArray* words = [self.managedObjectContext executeFetchRequest:request error:&errors];
+    
+    if (errors)
+    {
+        
+    }
+    else
+    {
+        for (id word in words)
+        {
+            [self.managedObjectContext deleteObject:word];
+        }
+    }
 }
 
 @end

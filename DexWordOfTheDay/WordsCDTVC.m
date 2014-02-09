@@ -10,6 +10,8 @@
 #import "RssParser.h"
 #import "Word.h"
 #import "Word+Dex.h"
+#import "WordViewController.h"
+#import <SystemConfiguration/SCNetworkReachability.h>
 
 @interface WordsCDTVC ()
 
@@ -69,6 +71,7 @@
 
 - (IBAction)refresh
 {
+    [self displayWarning:@"Atentie"];
     [self.refreshControl beginRefreshing];
     dispatch_queue_t fetchQ = dispatch_queue_create("RSS Fetch", NULL);
     dispatch_async(fetchQ, ^{
@@ -87,6 +90,21 @@
                                     
                                 }
                             });
+}
+
+- (BOOL)checkInternetConnectivity
+{
+    //NSURL *url = [[NSURL alloc] initWithString:@"www.google.com"];
+    //NSString *host = [url host];
+    //SCNetworkReachabilityRef reachabilityRef = SCNetworkReachabilityCreateWithName(NULL, [host UTF8String]);
+    return TRUE;
+}
+
+- (void)displayWarning:(NSString *)message
+{
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Atentie" message:message delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
+    [alert addButtonWithTitle:@"OK"];
+    [alert show];
 }
 
 - (void)saveRssWordsInDatabase:(NSArray *)rssWords
@@ -134,6 +152,21 @@
     cell.detailTextLabel.text = [dateFormatter stringFromDate:word.day];
     
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"ShowWord"])
+    {
+        if ([segue.destinationViewController isKindOfClass:[WordViewController class]])
+        {
+            UITableViewCell* cell = [self.tableView cellForRowAtIndexPath:[self.tableView indexPathForSelectedRow]];
+            
+            WordViewController* wvc = (WordViewController *)segue.destinationViewController;
+            wvc.managedObjectContext = self.managedObjectContext;
+            wvc.wordTitle = cell.textLabel.text;
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning

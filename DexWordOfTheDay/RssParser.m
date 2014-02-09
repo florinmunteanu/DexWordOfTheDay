@@ -89,7 +89,8 @@
     if ([elementName isEqualToString:@"item"])
     {
         currentWord.title = [NSString stringWithString:title];
-        currentWord.definition = [self clearHtmlTags:definition];
+        currentWord.htmlDefinition = [NSString stringWithString:definition];
+        //currentWord.definition = [self clearHtmlTags:definition];
         currentWord.link = [NSString stringWithString:link];
         currentWord.imageURL = [self getImageURL:definition];
         
@@ -131,6 +132,7 @@
     return [wordDefinition substringWithRange:NSMakeRange(src.location + src.length, ext.location + ext.length - src.location - src.length - 1)];
 }
 
+/*
 -(NSString *)getShortDefinition:(NSString *)wordDefinition
 {
     NSRange prefix = [wordDefinition rangeOfString:@"<b>1.</b>"];
@@ -139,8 +141,7 @@
     {
         NSUInteger start = prefix.location + prefix.length;
         
-        /* Search the first occurence of '<' character after "<b>1.</b>".
-         */
+        // Search the first occurence of '<' character after "<b>1.</b>".
         NSRange end = [wordDefinition rangeOfString:@"<" options:NSLiteralSearch range:NSMakeRange(start, wordDefinition.length - prefix.location + prefix.length)];
         if (end.length > 0)
         {
@@ -149,14 +150,6 @@
             return [wordDefinition substringWithRange:NSMakeRange(start, length)];
         }
     }
-    /*
-    else
-    {
-        [wordDefinition rangeOfString:@"<img"];
-        
-        NSString* definition = [wordDefinition stringByReplacingOccurrencesOfString:@"<br/>" withString:@""];
-        definition = [wordDefinition stringByReplacingOccurrencesOfString:@"<i>" withString:@""];
-    }*/
     return nil;
 }
 
@@ -229,5 +222,6 @@
     
     return wordDefinition;
 }
+*/
 
 @end

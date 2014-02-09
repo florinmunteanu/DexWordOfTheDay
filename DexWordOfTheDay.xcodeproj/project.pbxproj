@@ -13,6 +13,7 @@
 		4E1DE2FA1853BF54002CED40 /* info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E1DE2F81853BF54002CED40 /* info@2x.png */; };
 		4E1DE2FD1853C153002CED40 /* bookmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E1DE2FB1853C153002CED40 /* bookmark.png */; };
 		4E1DE2FE1853C153002CED40 /* bookmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E1DE2FC1853C153002CED40 /* bookmark@2x.png */; };
+		4E204ED318905B4D009FAE82 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E204ED218905B4D009FAE82 /* SystemConfiguration.framework */; };
 		4E3468961832C5BA00FD565A /* RssParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3468951832C5BA00FD565A /* RssParser.m */; };
 		4E3468DA1836A95B00FD565A /* RssWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3468D91836A95B00FD565A /* RssWord.m */; };
 		4E45517E17D65E1400924CD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E45517D17D65E1400924CD3 /* UIKit.framework */; };
@@ -25,6 +26,7 @@
 		4E45519217D65E1400924CD3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E45519117D65E1400924CD3 /* Default.png */; };
 		4E45519417D65E1400924CD3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E45519317D65E1400924CD3 /* Default@2x.png */; };
 		4E45519617D65E1400924CD3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E45519517D65E1400924CD3 /* Default-568h@2x.png */; };
+		4E47490A1857AAC400B0655A /* WordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4749091857AAC400B0655A /* WordViewController.m */; };
 		4E841F271853CACB000A55F4 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E841F261853CACB000A55F4 /* AboutViewController.m */; };
 		4E841F2A1853CC13000A55F4 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E841F291853CC13000A55F4 /* SettingsViewController.m */; };
 		4E9A076517D6647D009DE58B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E9A076317D6647D009DE58B /* Model.xcdatamodeld */; };
@@ -42,6 +44,7 @@
 		4E1DE2F81853BF54002CED40 /* info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "info@2x.png"; path = "Images/info@2x.png"; sourceTree = "<group>"; };
 		4E1DE2FB1853C153002CED40 /* bookmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bookmark.png; path = Images/bookmark.png; sourceTree = "<group>"; };
 		4E1DE2FC1853C153002CED40 /* bookmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bookmark@2x.png"; path = "Images/bookmark@2x.png"; sourceTree = "<group>"; };
+		4E204ED218905B4D009FAE82 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4E3468941832C5BA00FD565A /* RssParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RssParser.h; sourceTree = "<group>"; };
 		4E3468951832C5BA00FD565A /* RssParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RssParser.m; sourceTree = "<group>"; };
 		4E3468D81836A95B00FD565A /* RssWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RssWord.h; sourceTree = "<group>"; };
@@ -60,6 +63,8 @@
 		4E45519117D65E1400924CD3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		4E45519317D65E1400924CD3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4E45519517D65E1400924CD3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4E4749081857AAC400B0655A /* WordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordViewController.h; sourceTree = "<group>"; };
+		4E4749091857AAC400B0655A /* WordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordViewController.m; sourceTree = "<group>"; };
 		4E841F251853CACB000A55F4 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		4E841F261853CACB000A55F4 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		4E841F281853CC13000A55F4 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -81,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E204ED318905B4D009FAE82 /* SystemConfiguration.framework in Frameworks */,
 				4E45517E17D65E1400924CD3 /* UIKit.framework in Frameworks */,
 				4E45518017D65E1400924CD3 /* Foundation.framework in Frameworks */,
 				4E45518217D65E1400924CD3 /* CoreGraphics.framework in Frameworks */,
@@ -124,6 +130,7 @@
 		4E45517C17D65E1400924CD3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4E204ED218905B4D009FAE82 /* SystemConfiguration.framework */,
 				4E45517D17D65E1400924CD3 /* UIKit.framework */,
 				4E45517F17D65E1400924CD3 /* Foundation.framework */,
 				4E45518117D65E1400924CD3 /* CoreGraphics.framework */,
@@ -153,6 +160,8 @@
 				4E841F261853CACB000A55F4 /* AboutViewController.m */,
 				4E841F281853CC13000A55F4 /* SettingsViewController.h */,
 				4E841F291853CC13000A55F4 /* SettingsViewController.m */,
+				4E4749081857AAC400B0655A /* WordViewController.h */,
+				4E4749091857AAC400B0655A /* WordViewController.m */,
 			);
 			path = DexWordOfTheDay;
 			sourceTree = "<group>";
@@ -257,6 +266,7 @@
 			files = (
 				4E45518C17D65E1400924CD3 /* main.m in Sources */,
 				4E3468DA1836A95B00FD565A /* RssWord.m in Sources */,
+				4E47490A1857AAC400B0655A /* WordViewController.m in Sources */,
 				4E45519017D65E1400924CD3 /* AppDelegate.m in Sources */,
 				4E9A076517D6647D009DE58B /* Model.xcdatamodeld in Sources */,
 				4E3468961832C5BA00FD565A /* RssParser.m in Sources */,

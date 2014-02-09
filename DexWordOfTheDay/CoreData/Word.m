@@ -13,7 +13,7 @@
 
 @dynamic day;
 @dynamic title;
-@dynamic definition;
+@dynamic htmlDefinition;
 @dynamic image;
 @dynamic imageURL;
 @dynamic link;

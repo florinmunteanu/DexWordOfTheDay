@@ -12,4 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UISwitch *autoSyncSwitch;
 
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+
 @end

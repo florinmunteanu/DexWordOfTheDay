@@ -34,7 +34,7 @@
         word = [NSEntityDescription insertNewObjectForEntityForName:@"Word" inManagedObjectContext:context];
         word.title = rssWord.title;
         word.day = rssWord.day;
-        word.definition = rssWord.definition;
+        word.htmlDefinition = rssWord.htmlDefinition;
         word.imageURL = rssWord.imageURL;
         word.link = rssWord.link;
     }
