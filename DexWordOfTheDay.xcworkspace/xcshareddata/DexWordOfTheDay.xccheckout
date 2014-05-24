@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1ECDDF44-36AB-4C8C-B283-870D45E84A6F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DexWordOfTheDay</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>930EC05D-F6F4-449A-A18E-61BF5B93C7B1</key>
+		<string>https://github.com/florinmunteanu/DexWordOfTheDay.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DexWordOfTheDay.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>930EC05D-F6F4-449A-A18E-61BF5B93C7B1</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/florinmunteanu/DexWordOfTheDay.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>930EC05D-F6F4-449A-A18E-61BF5B93C7B1</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>930EC05D-F6F4-449A-A18E-61BF5B93C7B1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DexWordOfTheDay</string>
+		</dict>
+	</array>
+</dict>
+</plist>

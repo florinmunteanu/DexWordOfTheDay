@@ -12,4 +12,8 @@
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
+-(void)refreshData;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @end

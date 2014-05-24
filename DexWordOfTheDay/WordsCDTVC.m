@@ -23,8 +23,10 @@
 {
     [super viewDidLoad];
 	[self.refreshControl addTarget:self
-                            action:@selector(refresh)
+                            action:@selector(refreshData)
                   forControlEvents:UIControlEventValueChanged];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -50,7 +52,7 @@
               if (success == YES)
               {
                   self.managedObjectContext = document.managedObjectContext;
-                  [self refresh];
+                  [self refreshData];
               }
           }];
     }
@@ -69,9 +71,9 @@
     }
 }
 
-- (IBAction)refresh
+- (void)refreshData
 {
-    [self displayWarning:@"Atentie"];
+    //[self displayWarning:@"Atentie"];
     [self.refreshControl beginRefreshing];
     dispatch_queue_t fetchQ = dispatch_queue_create("RSS Fetch", NULL);
     dispatch_async(fetchQ, ^{

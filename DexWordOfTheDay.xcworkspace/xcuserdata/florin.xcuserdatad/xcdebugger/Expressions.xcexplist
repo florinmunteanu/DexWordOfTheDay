@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "GLOBAL">
+         <PersistentStrings>
+            <PersistentString
+               value = " [[self.fetchedResultsController sections] objectAtIndex:0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[WordsManager setManagedObjectContext:]:WordsManager.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.fetchedResultsController.nu">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[WordsViewController numberOfSectionsInTableView:]:WordsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = " [[self.fetchedResultsController sections] count]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[WordsCDTVC tableView:cellForRowAtIndexPath:]:WordsCDTVC.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "word.title">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

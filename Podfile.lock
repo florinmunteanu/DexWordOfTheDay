@@ -1,0 +1,16 @@
+PODS:
+  - HexColors (2.2.1)
+  - LBBlurredImage (0.2.0)
+  - TSMessages (0.9.7):
+    - HexColors
+
+DEPENDENCIES:
+  - LBBlurredImage
+  - TSMessages
+
+SPEC CHECKSUMS:
+  HexColors: 99211502e17904af7891fc8f687d0e4958a6d66e
+  LBBlurredImage: 26bacd10063a6e886de6a374f4727c3cefb22fc2
+  TSMessages: 9dd053bcf1a8985275177ebe0fb8c0f1416e92f7
+
+COCOAPODS: 0.32.1

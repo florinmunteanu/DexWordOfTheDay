@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E0341051918171B00756B1E /* WordsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0341041918171B00756B1E /* WordsManager.m */; };
+		4E03410A191826ED00756B1E /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E034108191826ED00756B1E /* SettingsViewController.m */; };
+		4E03410B191826ED00756B1E /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E034109191826ED00756B1E /* SettingsViewController.xib */; };
+		4E091687192551490084E3A2 /* WordsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E091685192551490084E3A2 /* WordsVC.m */; };
+		4E091688192551490084E3A2 /* WordsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E091686192551490084E3A2 /* WordsVC.xib */; };
 		4E1DE2EC1853BE07002CED40 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E1DE2EA1853BE07002CED40 /* settings.png */; };
 		4E1DE2ED1853BE07002CED40 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E1DE2EB1853BE07002CED40 /* settings@2x.png */; };
 		4E1DE2F91853BF54002CED40 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E1DE2F71853BF54002CED40 /* info.png */; };
@@ -14,6 +19,9 @@
 		4E1DE2FD1853C153002CED40 /* bookmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E1DE2FB1853C153002CED40 /* bookmark.png */; };
 		4E1DE2FE1853C153002CED40 /* bookmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E1DE2FC1853C153002CED40 /* bookmark@2x.png */; };
 		4E204ED318905B4D009FAE82 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E204ED218905B4D009FAE82 /* SystemConfiguration.framework */; };
+		4E23CD3D1909A5B000F75CC6 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E23CD3B1909A5B000F75CC6 /* bg.png */; };
+		4E23CD3E1909A5B000F75CC6 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E23CD3C1909A5B000F75CC6 /* bg@2x.png */; };
+		4E23CD411909A75700F75CC6 /* WordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E23CD401909A75700F75CC6 /* WordsViewController.m */; };
 		4E3468961832C5BA00FD565A /* RssParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3468951832C5BA00FD565A /* RssParser.m */; };
 		4E3468DA1836A95B00FD565A /* RssWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3468D91836A95B00FD565A /* RssWord.m */; };
 		4E45517E17D65E1400924CD3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E45517D17D65E1400924CD3 /* UIKit.framework */; };
@@ -27,17 +35,31 @@
 		4E45519417D65E1400924CD3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E45519317D65E1400924CD3 /* Default@2x.png */; };
 		4E45519617D65E1400924CD3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E45519517D65E1400924CD3 /* Default-568h@2x.png */; };
 		4E47490A1857AAC400B0655A /* WordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4749091857AAC400B0655A /* WordViewController.m */; };
+		4E544DC21930CA5D00079BB3 /* DexWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E544DC01930CA5D00079BB3 /* DexWordViewController.m */; };
+		4E544DC31930CA5D00079BB3 /* DexWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E544DC11930CA5D00079BB3 /* DexWordViewController.xib */; };
 		4E841F271853CACB000A55F4 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E841F261853CACB000A55F4 /* AboutViewController.m */; };
-		4E841F2A1853CC13000A55F4 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E841F291853CC13000A55F4 /* SettingsViewController.m */; };
+		4E841F2A1853CC13000A55F4 /* SettingsViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E841F291853CC13000A55F4 /* SettingsViewController2.m */; };
+		4E976E651922A43700A7D09F /* WordsCDTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E976E641922A43700A7D09F /* WordsCDTVC.xib */; };
 		4E9A076517D6647D009DE58B /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E9A076317D6647D009DE58B /* Model.xcdatamodeld */; };
 		4E9A076B17D666E0009DE58B /* Word.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9A076A17D666E0009DE58B /* Word.m */; };
 		4E9A077117D66783009DE58B /* Word+Dex.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9A077017D66783009DE58B /* Word+Dex.m */; };
 		4E9A077417D6684D009DE58B /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9A077317D6684D009DE58B /* CoreDataTableViewController.m */; };
 		4E9A077617D66923009DE58B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9A077517D66923009DE58B /* MainStoryboard.storyboard */; };
 		4E9A077917D67D17009DE58B /* WordsCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9A077817D67D17009DE58B /* WordsCDTVC.m */; };
+		4ED850611910251100298DF2 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4ED850601910251100298DF2 /* logo@2x.png */; };
+		4ED85063191028DC00298DF2 /* theme.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4ED85062191028DC00298DF2 /* theme.jpg */; };
+		8C65D7A8142F4EAA8929B00B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C67567A4A26E4E85A6976B48 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E0341031918171B00756B1E /* WordsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsManager.h; sourceTree = "<group>"; };
+		4E0341041918171B00756B1E /* WordsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsManager.m; sourceTree = "<group>"; };
+		4E034107191826ED00756B1E /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = Views/SettingsViewController.h; sourceTree = "<group>"; };
+		4E034108191826ED00756B1E /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = Views/SettingsViewController.m; sourceTree = "<group>"; };
+		4E034109191826ED00756B1E /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = Views/SettingsViewController.xib; sourceTree = "<group>"; };
+		4E091684192551490084E3A2 /* WordsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsVC.h; sourceTree = "<group>"; };
+		4E091685192551490084E3A2 /* WordsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsVC.m; sourceTree = "<group>"; };
+		4E091686192551490084E3A2 /* WordsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WordsVC.xib; sourceTree = "<group>"; };
 		4E1DE2EA1853BE07002CED40 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = Images/settings.png; sourceTree = "<group>"; };
 		4E1DE2EB1853BE07002CED40 /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings@2x.png"; path = "Images/settings@2x.png"; sourceTree = "<group>"; };
 		4E1DE2F71853BF54002CED40 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = info.png; path = Images/info.png; sourceTree = "<group>"; };
@@ -45,6 +67,10 @@
 		4E1DE2FB1853C153002CED40 /* bookmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bookmark.png; path = Images/bookmark.png; sourceTree = "<group>"; };
 		4E1DE2FC1853C153002CED40 /* bookmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bookmark@2x.png"; path = "Images/bookmark@2x.png"; sourceTree = "<group>"; };
 		4E204ED218905B4D009FAE82 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4E23CD3B1909A5B000F75CC6 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg.png; path = Images/bg.png; sourceTree = "<group>"; };
+		4E23CD3C1909A5B000F75CC6 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg@2x.png"; path = "Images/bg@2x.png"; sourceTree = "<group>"; };
+		4E23CD3F1909A75700F75CC6 /* WordsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsViewController.h; sourceTree = "<group>"; };
+		4E23CD401909A75700F75CC6 /* WordsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsViewController.m; sourceTree = "<group>"; };
 		4E3468941832C5BA00FD565A /* RssParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RssParser.h; sourceTree = "<group>"; };
 		4E3468951832C5BA00FD565A /* RssParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RssParser.m; sourceTree = "<group>"; };
 		4E3468D81836A95B00FD565A /* RssWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RssWord.h; sourceTree = "<group>"; };
@@ -65,10 +91,14 @@
 		4E45519517D65E1400924CD3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4E4749081857AAC400B0655A /* WordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordViewController.h; sourceTree = "<group>"; };
 		4E4749091857AAC400B0655A /* WordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordViewController.m; sourceTree = "<group>"; };
+		4E544DBF1930CA5D00079BB3 /* DexWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DexWordViewController.h; sourceTree = "<group>"; };
+		4E544DC01930CA5D00079BB3 /* DexWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DexWordViewController.m; sourceTree = "<group>"; };
+		4E544DC11930CA5D00079BB3 /* DexWordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DexWordViewController.xib; sourceTree = "<group>"; };
 		4E841F251853CACB000A55F4 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		4E841F261853CACB000A55F4 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
-		4E841F281853CC13000A55F4 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		4E841F291853CC13000A55F4 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		4E841F281853CC13000A55F4 /* SettingsViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController2.h; sourceTree = "<group>"; };
+		4E841F291853CC13000A55F4 /* SettingsViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController2.m; sourceTree = "<group>"; };
+		4E976E641922A43700A7D09F /* WordsCDTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WordsCDTVC.xib; sourceTree = "<group>"; };
 		4E9A076417D6647D009DE58B /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		4E9A076917D666E0009DE58B /* Word.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Word.h; path = CoreData/Word.h; sourceTree = "<group>"; };
 		4E9A076A17D666E0009DE58B /* Word.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Word.m; path = CoreData/Word.m; sourceTree = "<group>"; };
@@ -79,6 +109,10 @@
 		4E9A077517D66923009DE58B /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		4E9A077717D67D17009DE58B /* WordsCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordsCDTVC.h; sourceTree = "<group>"; };
 		4E9A077817D67D17009DE58B /* WordsCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordsCDTVC.m; sourceTree = "<group>"; };
+		4ED850601910251100298DF2 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo@2x.png"; path = "Images/logo@2x.png"; sourceTree = "<group>"; };
+		4ED85062191028DC00298DF2 /* theme.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = theme.jpg; path = Images/theme.jpg; sourceTree = "<group>"; };
+		C67567A4A26E4E85A6976B48 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F69A9860DCD3477BB279F57E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,15 +125,35 @@
 				4E45518017D65E1400924CD3 /* Foundation.framework in Frameworks */,
 				4E45518217D65E1400924CD3 /* CoreGraphics.framework in Frameworks */,
 				4E45518417D65E1400924CD3 /* CoreData.framework in Frameworks */,
+				8C65D7A8142F4EAA8929B00B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E034106191826C300756B1E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4E034107191826ED00756B1E /* SettingsViewController.h */,
+				4E034108191826ED00756B1E /* SettingsViewController.m */,
+				4E034109191826ED00756B1E /* SettingsViewController.xib */,
+				4E544DBF1930CA5D00079BB3 /* DexWordViewController.h */,
+				4E544DC01930CA5D00079BB3 /* DexWordViewController.m */,
+				4E544DC11930CA5D00079BB3 /* DexWordViewController.xib */,
+				4E23CD3F1909A75700F75CC6 /* WordsViewController.h */,
+				4E23CD401909A75700F75CC6 /* WordsViewController.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		4E1DE2E51853BC3E002CED40 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4ED85062191028DC00298DF2 /* theme.jpg */,
+				4ED850601910251100298DF2 /* logo@2x.png */,
+				4E23CD3B1909A5B000F75CC6 /* bg.png */,
+				4E23CD3C1909A5B000F75CC6 /* bg@2x.png */,
 				4E1DE2FB1853C153002CED40 /* bookmark.png */,
 				4E1DE2FC1853C153002CED40 /* bookmark@2x.png */,
 				4E1DE2F71853BF54002CED40 /* info.png */,
@@ -116,6 +170,7 @@
 				4E45518517D65E1400924CD3 /* DexWordOfTheDay */,
 				4E45517C17D65E1400924CD3 /* Frameworks */,
 				4E45517B17D65E1400924CD3 /* Products */,
+				F69A9860DCD3477BB279F57E /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,6 +190,7 @@
 				4E45517F17D65E1400924CD3 /* Foundation.framework */,
 				4E45518117D65E1400924CD3 /* CoreGraphics.framework */,
 				4E45518317D65E1400924CD3 /* CoreData.framework */,
+				C67567A4A26E4E85A6976B48 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -142,26 +198,33 @@
 		4E45518517D65E1400924CD3 /* DexWordOfTheDay */ = {
 			isa = PBXGroup;
 			children = (
+				4E034106191826C300756B1E /* Views */,
+				4E45519F17D663CC00924CD3 /* CoreData */,
 				4E1DE2E51853BC3E002CED40 /* Images */,
+				4E45518617D65E1400924CD3 /* Supporting Files */,
 				4E9A077217D6684D009DE58B /* CoreDataTableViewController.h */,
 				4E9A077317D6684D009DE58B /* CoreDataTableViewController.m */,
-				4E45519F17D663CC00924CD3 /* CoreData */,
 				4E45518E17D65E1400924CD3 /* AppDelegate.h */,
 				4E45518F17D65E1400924CD3 /* AppDelegate.m */,
-				4E45518617D65E1400924CD3 /* Supporting Files */,
 				4E9A077517D66923009DE58B /* MainStoryboard.storyboard */,
 				4E9A077717D67D17009DE58B /* WordsCDTVC.h */,
 				4E9A077817D67D17009DE58B /* WordsCDTVC.m */,
+				4E976E641922A43700A7D09F /* WordsCDTVC.xib */,
 				4E3468941832C5BA00FD565A /* RssParser.h */,
 				4E3468951832C5BA00FD565A /* RssParser.m */,
 				4E3468D81836A95B00FD565A /* RssWord.h */,
 				4E3468D91836A95B00FD565A /* RssWord.m */,
 				4E841F251853CACB000A55F4 /* AboutViewController.h */,
 				4E841F261853CACB000A55F4 /* AboutViewController.m */,
-				4E841F281853CC13000A55F4 /* SettingsViewController.h */,
-				4E841F291853CC13000A55F4 /* SettingsViewController.m */,
+				4E841F281853CC13000A55F4 /* SettingsViewController2.h */,
+				4E841F291853CC13000A55F4 /* SettingsViewController2.m */,
 				4E4749081857AAC400B0655A /* WordViewController.h */,
 				4E4749091857AAC400B0655A /* WordViewController.m */,
+				4E0341031918171B00756B1E /* WordsManager.h */,
+				4E0341041918171B00756B1E /* WordsManager.m */,
+				4E091684192551490084E3A2 /* WordsVC.h */,
+				4E091685192551490084E3A2 /* WordsVC.m */,
+				4E091686192551490084E3A2 /* WordsVC.xib */,
 			);
 			path = DexWordOfTheDay;
 			sourceTree = "<group>";
@@ -199,9 +262,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E45519C17D65E1400924CD3 /* Build configuration list for PBXNativeTarget "DexWordOfTheDay" */;
 			buildPhases = (
+				E726206991394534860B7A63 /* Check Pods Manifest.lock */,
 				4E45517617D65E1400924CD3 /* Sources */,
 				4E45517717D65E1400924CD3 /* Frameworks */,
 				4E45517817D65E1400924CD3 /* Resources */,
+				0D61F4BC83714DD0AB8B2F2F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -243,21 +308,62 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E091688192551490084E3A2 /* WordsVC.xib in Resources */,
 				4E1DE2EC1853BE07002CED40 /* settings.png in Resources */,
 				4E45518A17D65E1400924CD3 /* InfoPlist.strings in Resources */,
+				4E23CD3D1909A5B000F75CC6 /* bg.png in Resources */,
 				4E1DE2ED1853BE07002CED40 /* settings@2x.png in Resources */,
 				4E45519217D65E1400924CD3 /* Default.png in Resources */,
 				4E45519417D65E1400924CD3 /* Default@2x.png in Resources */,
 				4E45519617D65E1400924CD3 /* Default-568h@2x.png in Resources */,
 				4E1DE2FA1853BF54002CED40 /* info@2x.png in Resources */,
+				4E544DC31930CA5D00079BB3 /* DexWordViewController.xib in Resources */,
 				4E1DE2FD1853C153002CED40 /* bookmark.png in Resources */,
 				4E1DE2FE1853C153002CED40 /* bookmark@2x.png in Resources */,
+				4E23CD3E1909A5B000F75CC6 /* bg@2x.png in Resources */,
+				4E03410B191826ED00756B1E /* SettingsViewController.xib in Resources */,
+				4E976E651922A43700A7D09F /* WordsCDTVC.xib in Resources */,
+				4ED850611910251100298DF2 /* logo@2x.png in Resources */,
 				4E9A077617D66923009DE58B /* MainStoryboard.storyboard in Resources */,
 				4E1DE2F91853BF54002CED40 /* info.png in Resources */,
+				4ED85063191028DC00298DF2 /* theme.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D61F4BC83714DD0AB8B2F2F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E726206991394534860B7A63 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4E45517617D65E1400924CD3 /* Sources */ = {
@@ -265,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E45518C17D65E1400924CD3 /* main.m in Sources */,
+				4E544DC21930CA5D00079BB3 /* DexWordViewController.m in Sources */,
 				4E3468DA1836A95B00FD565A /* RssWord.m in Sources */,
 				4E47490A1857AAC400B0655A /* WordViewController.m in Sources */,
 				4E45519017D65E1400924CD3 /* AppDelegate.m in Sources */,
@@ -273,9 +380,13 @@
 				4E9A076B17D666E0009DE58B /* Word.m in Sources */,
 				4E841F271853CACB000A55F4 /* AboutViewController.m in Sources */,
 				4E9A077117D66783009DE58B /* Word+Dex.m in Sources */,
-				4E841F2A1853CC13000A55F4 /* SettingsViewController.m in Sources */,
+				4E841F2A1853CC13000A55F4 /* SettingsViewController2.m in Sources */,
 				4E9A077417D6684D009DE58B /* CoreDataTableViewController.m in Sources */,
+				4E23CD411909A75700F75CC6 /* WordsViewController.m in Sources */,
+				4E091687192551490084E3A2 /* WordsVC.m in Sources */,
+				4E03410A191826ED00756B1E /* SettingsViewController.m in Sources */,
 				4E9A077917D67D17009DE58B /* WordsCDTVC.m in Sources */,
+				4E0341051918171B00756B1E /* WordsManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +464,7 @@
 		};
 		4E45519D17D65E1400924CD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F69A9860DCD3477BB279F57E /* Pods.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -366,6 +478,7 @@
 		};
 		4E45519E17D65E1400924CD3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F69A9860DCD3477BB279F57E /* Pods.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
