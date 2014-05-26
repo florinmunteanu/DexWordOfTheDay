@@ -1,10 +1,3 @@
-//
-//  WordsManager.h
-//  DexWordOfTheDay
-//
-//  Created by Florin Munteanu on 05/05/14.
-//  Copyright (c) 2014 Florin Munteanu. All rights reserved.
-//
 
 #import <Foundation/Foundation.h>
 #import "Word.h"
@@ -18,5 +11,11 @@
 - (Word *)wordAtIndexPath:(NSIndexPath *)indexPath;
 
 - (NSUInteger)numberOfWords;
+
+- (void)refreshInBackgroundIfNecessary:(void (^)(BOOL))completionBlock;
+
+- (Word *)lastWord;
+
+- (void)deleteAllWords;
 
 @end

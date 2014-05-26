@@ -1,14 +1,6 @@
-//
-//  Word.h
-//  DexWordOfTheDay
-//
-//  Created by Florin Munteanu on 9/3/13.
-//  Copyright (c) 2013 Florin Munteanu. All rights reserved.
-//
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-
 
 @interface Word : NSManagedObject
 

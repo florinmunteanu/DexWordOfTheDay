@@ -23,9 +23,9 @@
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2ka-fv-K2I">
                     <rect key="frame" x="0.0" y="19" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                    <color key="backgroundColor" red="0.40000000000000002" green="0.80000000000000004" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <items>
-                        <barButtonItem title="Close" id="nrO-X7-C5c">
+                        <barButtonItem image="close.png" id="nrO-X7-C5c">
                             <connections>
                                 <action selector="closeView:" destination="-1" id="RQu-Of-h3W"/>
                             </connections>
@@ -38,4 +38,7 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
+    <resources>
+        <image name="close.png" width="25" height="25"/>
+    </resources>
 </document>

@@ -1,10 +1,3 @@
-//
-//  Word+Dex.m
-//  DexWordOfTheDay
-//
-//  Created by Florin Munteanu on 9/3/13.
-//  Copyright (c) 2013 Florin Munteanu. All rights reserved.
-//
 
 #import "Word+Dex.h"
 #import "Word.h"
@@ -12,7 +5,7 @@
 
 @implementation Word (Dex)
 
-+ (Word *)fromRssWord:(RssWord *)rssWord inManagedObjectContext:(NSManagedObjectContext *)context
++ (Word *)fromRssWord:(RssWord *)rssWord inManagedObjectContext:(NSManagedObjectContext *)context saveError:(NSError **)saveError
 {
     Word* word = nil;
     
@@ -27,6 +20,7 @@
     {
         // fetch failed
         // handle error if any
+        *saveError = error;
         
     }
     else if ([matches count] == 0)

@@ -1,10 +1,4 @@
-//
-//  RssParser.m
-//  DexWordOfTheDay
-//
-//  Created by Florin Munteanu on 12/11/13.
-//  Copyright (c) 2013 Florin Munteanu. All rights reserved.
-//
+
 #import <Foundation/NSValue.h>
 #import "RssParser.h"
 #import "RssWord.h"
@@ -49,7 +43,7 @@
     return self.words;
 }
 
--(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
     currentElement = elementName;
     
@@ -64,7 +58,7 @@
     }
 }
 
--(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
 {
     if ([currentElement isEqualToString:@"title"])
     {
@@ -84,7 +78,7 @@
     }
 }
 
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
     if ([elementName isEqualToString:@"item"])
     {
@@ -110,7 +104,7 @@
     }
 }
 
--(NSString *)getImageURL:(NSString *)wordDefinition
+- (NSString *)getImageURL:(NSString *)wordDefinition
 {
     NSRange src = [wordDefinition rangeOfString:@"src=\""];
     NSRange ext = [wordDefinition rangeOfString:@".jpg\""];

@@ -2,8 +2,6 @@
 #import "WordsViewController.h"
 #import "Word.h"
 #import "WordsManager.h"
-#import "WordsCDTVC.h"
-#import "WordsVC.h"
 #import "DexWordViewController.h"
 #import "Views/SettingsViewController.h"
 #import <TSMessage.h>
@@ -13,12 +11,12 @@
 
 @property (nonatomic, strong) NSManagedObjectContext* managedObjectContext;
 
-//@property (nonatomic, strong) NSFetchedResultsController* fetchedResultsController;
-
 @property (nonatomic, strong) UIImageView* backgroundImageView;
 @property (nonatomic, strong) UIImageView* blurredImageView;
 @property (nonatomic, strong) UITableView* tableView;
 @property (nonatomic, assign) CGFloat screenHeight;
+
+@property (nonatomic, strong) UIWebView* definitionWebView;
 
 @end
 
@@ -29,7 +27,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-        // Custom initialization
+    
     }
     return self;
 }
@@ -37,33 +35,33 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    //self.view.backgroundColor = [UIColor redColor];
     
     if (self.managedObjectContext == nil)
     {
         [self initManagedDocumentAndRefresh];
     }
     
+    [self createUI];
+}
+
+- (void)createUI
+{
     self.screenHeight = [UIScreen mainScreen].bounds.size.height;
     
-    UIImage* background = [UIImage imageNamed:@"theme.jpg"];
+    //UIImage* background = [UIImage imageNamed:@"theme.jpg"];
     
-    self.backgroundImageView = [[UIImageView alloc] initWithImage:background];
-    self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
-    [self.view addSubview:self.backgroundImageView];
+    //self.backgroundImageView = [[UIImageView alloc] initWithImage:background];
+    //self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
+    //[self.view addSubview:self.backgroundImageView];
     
     self.blurredImageView = [[UIImageView alloc] init];
     self.blurredImageView.contentMode = UIViewContentModeScaleAspectFill;
     self.blurredImageView.alpha = 0;
-    [self.blurredImageView setImageToBlur:background blurRadius:1 completionBlock:nil];
+    //[self.blurredImageView setImageToBlur:background blurRadius:1 completionBlock:nil];
     [self.view addSubview:self.blurredImageView];
     
     self.tableView = [[UITableView alloc] init];
     self.tableView.backgroundColor = [UIColor clearColor];
-    //[self.tableView beginUpdates];
-    //self.tableView.delegate = self;
-    //self.tableView.dataSource = self;
     self.tableView.separatorColor = [UIColor colorWithWhite:1 alpha:0.2];
     self.tableView.pagingEnabled = YES;
     [self.view addSubview:self.tableView];
@@ -72,71 +70,75 @@
     
     CGFloat inset = 20;
     
-    CGFloat definitionHeight = 110;
-    CGFloat dateHeight = 40;
-    CGFloat wordHeight = 30;
-    
-    CGRect dateFrame = CGRectMake(inset,                                // x
-                                  headerFrame.size.height - dateHeight, // y
-                                  headerFrame.size.width - (2 * inset), // width
-                                  dateHeight);                          // height
-    
-    CGRect definitionFrame = CGRectMake(inset,                                                      // x
-                                        headerFrame.size.height - (definitionHeight + dateHeight),  // y
-                                        headerFrame.size.width - (2 * inset),                       // width
-                                        definitionHeight);                                          // height
-    CGRect wordFrame = CGRectMake(inset,                                 // x
-                                  definitionFrame.origin.y - wordHeight, // y
-                                  headerFrame.size.width - (2 * inset),  // width
-                                  wordHeight);                           // height
-    
-    CGRect settingsFrame = CGRectMake(inset, // x
+    CGRect settingsFrame = CGRectMake(5,     // x
                                       inset, // y
-                                      100,   // width
+                                      50,    // width
                                       44);   // height
+    
+    CGRect downloadFrame = CGRectMake(headerFrame.size.width - 55,  // x
+                                     inset,  // y
+                                     50,     // width
+                                     44);    // height
+    
+    CGRect definitionFrame = CGRectMake(0,                                     // x
+                                        inset + downloadFrame.size.height + 5, // y
+                                        headerFrame.size.width,               // width
+                                        self.screenHeight - settingsFrame.size.height - inset); // height
     
     UIView* header = [[UIView alloc] initWithFrame:headerFrame];
     header.backgroundColor = [UIColor clearColor];
     self.tableView.tableHeaderView = header;
     
-    // Word label
-    UILabel* wordLabel = [[UILabel alloc] initWithFrame:wordFrame];
-    wordLabel.backgroundColor = [UIColor clearColor];
-    wordLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:18];
-    wordLabel.textColor = [UIColor redColor];
-    wordLabel.text = @"word";
-    [header addSubview:wordLabel];
-    
-    // Definition label
-    UILabel* definitionLabel = [[UILabel alloc] initWithFrame:definitionFrame];
-    definitionLabel.backgroundColor = [UIColor clearColor];
-    definitionLabel.textColor = [UIColor redColor];
-    definitionLabel.numberOfLines = 0; // A value of 0 means no limit
-    definitionLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:18];
-    definitionLabel.text = @"definition";
-    [header addSubview:definitionLabel];
-    
-    UILabel* dateLabel = [[UILabel alloc] initWithFrame:dateFrame];
-    dateLabel.backgroundColor = [UIColor clearColor];
-    dateLabel.textColor = [UIColor redColor];
-    dateLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:18];
-    dateLabel.text = @"date";
-    [header addSubview:dateLabel];
+    // Definition web view
+    self.definitionWebView = [[UIWebView alloc] initWithFrame:definitionFrame];
+    [header addSubview:self.definitionWebView];
     
     UIButton* settingsButton = [[UIButton alloc] initWithFrame:settingsFrame];
-    [settingsButton setTitle:@"Settings" forState:UIControlStateNormal];
     [settingsButton addTarget:self action:@selector(openSettings) forControlEvents:UIControlEventTouchUpInside];
+    [settingsButton setImage:[UIImage imageNamed:@"settings"] forState:UIControlStateNormal];
     
+    UIButton* refreshButton = [[UIButton alloc] initWithFrame:downloadFrame];
+    [refreshButton setImage:[UIImage imageNamed:@"download"] forState:UIControlStateNormal];
+    [refreshButton addTarget:self action:@selector(refreshWords) forControlEvents:UIControlEventTouchUpInside];
     
     [header addSubview:settingsButton];
+    [header addSubview:refreshButton];
+}
+
+- (void)displayLastWord
+{
+    Word* lastWord = [[WordsManager sharedInstance] lastWord];
+    if (lastWord)
+    {
+        [self.definitionWebView loadHTMLString:lastWord.htmlDefinition baseURL:nil];
+    }
 }
 
 - (void)openSettings
 {
-   WordsVC* svc = [[WordsVC alloc] init];
-    //[svc refreshData];
-    //svc.managedObjectContext = self.managedObjectContext;
-   [self presentViewController:svc animated:YES completion:nil];
+    SettingsViewController* svc = [[SettingsViewController alloc] init];
+    [self presentViewController:svc animated:YES completion:nil];
+}
+
+- (void)refreshWords
+{
+    void (^completionBlock)(BOOL) = ^(BOOL success)
+                                    {
+                                        if (success)
+                                        {
+                                            [TSMessage showNotificationWithTitle:@"Succes"
+                                                                        subtitle:@"List a fost actualizata."
+                                                                            type:TSMessageNotificationTypeSuccess];
+                                        }
+                                        else
+                                        {
+                                            [TSMessage showNotificationWithTitle:@"Atentie"
+                                                                        subtitle:@"Posibil sa fi aparut o problema la actualizarea listei."
+                                                                            type:TSMessageNotificationTypeWarning];
+                                        }
+                                        [self displayLastWord];
+                                    };
+    [[WordsManager sharedInstance] refreshInBackgroundIfNecessary:completionBlock];
 }
 
 - (void)didReceiveMemoryWarning
@@ -172,12 +174,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;//[[self.fetchedResultsController sections] count];
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[WordsManager sharedInstance] numberOfWords];//[[[self.fetchedResultsController sections] objectAtIndex:section] numberOfObjects];
+    return [[WordsManager sharedInstance] numberOfWords];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -189,39 +191,14 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
     }
-    
-    //cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    //cell.backgroundColor = [UIColor colorWithWhite:0 alpha:0.2];
-    //cell.textLabel.textColor = [UIColor blackColor];
-    //cell.detailTextLabel.textColor = [UIColor blackColor];
-    
+
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"dd-MM"];
     
     Word* word = [[WordsManager sharedInstance] wordAtIndexPath:indexPath];
-    //Word *word = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = word.title;//@"Test";//word.title;
+
+    cell.textLabel.text = word.title;
     cell.detailTextLabel.text = [dateFormatter stringFromDate:word.day];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    //cell.acc
-    
-    //UIButton* deleteAllSongsButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    //deleteAllSongsButton.frame = cell.bounds;
-    //deleteAllSongsButton.backgroundColor = [UIColor redColor];
-    
-    //[deleteAllSongsButton setTitleColor:[UIColor whiteColor]
-    //                           forState:UIControlStateNormal];
-    //[deleteAllSongsButton setTitle:@"Delete all data"
-    //                      forState:UIControlStateNormal];
-    //[deleteAllSongsButton addTarget:self
-    //                         action:@selector(deleteAllData)
-    //               forControlEvents:UIControlEventTouchUpInside];
-    
-    //[cell.contentView addSubview:deleteAllSongsButton];
-    
-    //[autoPlaySwitch addTarget:self
-    //                   action:@selector(setAutoStart:)
-    //         forControlEvents:UIControlEventValueChanged];
     
     [self delayContentTouches:cell];
     
@@ -234,7 +211,7 @@
     
     DexWordViewController* wordViewController = [[DexWordViewController alloc] init];
     wordViewController.word = word;
-    //WordsVC* wordViewController = [[WordsVC alloc] init];
+
     [self presentViewController:wordViewController animated:YES completion:nil];
 }
 
@@ -273,7 +250,6 @@
               if (success == YES)
               {
                   self.managedObjectContext = document.managedObjectContext;
-                  //[self refresh];
               }
           }];
     }
@@ -300,6 +276,9 @@
         [WordsManager sharedInstance].managedObjectContext = managedObjectContext;
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
+        
+        [self displayLastWord];
+        [[WordsManager sharedInstance] refreshInBackgroundIfNecessary:nil];
     }
 }
 
